@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback de Velocidade</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        #feedback-button {
+            font-size: 24px;
+            padding: 15px 30px;
+            background-color: red;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+        #alert {
+            margin-top: 20px;
+            font-size: 20px;
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Estamos falando rápido?</h1>
+    <button id="feedback-button">Sim, mais devagar!</button>
+    <p id="alert"></p>
+
+    <script>
+        const button = document.getElementById("feedback-button");
+        const alertBox = document.getElementById("alert");
+
+        button.addEventListener("click", () => {
+            alertBox.innerText = "⚠️ Alerta: Falando muito rápido!";
+            setTimeout(() => {
+                alertBox.innerText = "";
+            }, 3000); // Alerta desaparece após 3 segundos
+        });
+    </script>
+</body>
+</html>
